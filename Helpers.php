@@ -150,7 +150,7 @@ class CartAPI_Helpers
 		if ($relation == 'InRange') 
 		{
 			$parts = explode(",",$value);
-			if (count($parts) != 2) var_dump($parts); //CartAPI_Helpers::dieOnError($encoder, 'UnsupportedFilter', 'InRange does not have a valid range');
+			if (count($parts) != 2) CartAPI_Helpers::dieOnError($encoder, 'UnsupportedFilter', 'InRange does not have a valid range');
 			return "( ".$db_field_name." >= ".min($parts)." AND ".$db_field_name." <= ".max($parts)." )";
 		}
 		
